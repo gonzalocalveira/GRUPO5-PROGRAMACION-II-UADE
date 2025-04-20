@@ -9,7 +9,7 @@ public interface ILista {
 	
 	public void agregarPrimero(IVehiculo dato);
 	
-	public void agregarUltimo(Vehiculo dato);
+	public void agregarUltimo(IVehiculo dato);
 	
 	public void agregarGenerico(int pos, Vehiculo dato);
 	
