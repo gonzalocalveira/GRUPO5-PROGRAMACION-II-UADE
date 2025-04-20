@@ -69,7 +69,7 @@ public class Lista implements ILista{
 	}
 
 	@Override
-	public void agregarGenerico(int pos, Vehiculo dato) {
+	public void agregarGenerico(int pos, IVehiculo dato) {
 		
 
 		
