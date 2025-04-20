@@ -11,7 +11,7 @@ public interface ILista {
 	
 	public void agregarUltimo(IVehiculo dato);
 	
-	public void agregarGenerico(int pos, Vehiculo dato);
+	public void agregarGenerico(int pos, IVehiculo dato);
 	
 	public void eliminarPrimero();
 	
