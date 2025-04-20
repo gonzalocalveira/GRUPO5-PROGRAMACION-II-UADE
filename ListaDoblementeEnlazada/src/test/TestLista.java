@@ -26,7 +26,7 @@ public class TestLista {
 		
 		p1.getListaVehiculos().agregarGenerico(1, v4);
 		
-		System.out.println(p1.toString());
+		System.out.println(p1.toString()); ///GENERA ERROR!!! PREGUNTAR
 		
 		System.out.println("Cantidad de elementos: "+p1.getListaVehiculos().cantidadElementos());
 		
