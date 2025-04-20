@@ -40,7 +40,7 @@ public class Lista implements ILista{
 
 
 	@Override
-	public void agregarUltimo(Vehiculo dato) {
+	public void agregarUltimo(IVehiculo dato) {
 		
 	
 		
