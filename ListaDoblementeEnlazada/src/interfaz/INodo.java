@@ -8,7 +8,7 @@ public interface INodo {
 	
 	public IVehiculo getDato();
 	
-	public void setDato(Vehiculo nuevoDato);
+	public void setDato(IVehiculo nuevoDato);
 	
 	public Nodo getSiguiente();
 	
