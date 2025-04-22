@@ -50,6 +50,8 @@ public interface ILista {
 	/// Postcondición: Devuelve el dato del último nodo.
 	public IVehiculo obtenerUltimo();
 	
-	
+	/// Precondición: ninguna.
+	/// Postcondición: Devuelve una representación textual de lista.
+	public String toString();
 
 }
