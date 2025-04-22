@@ -51,7 +51,7 @@ public class Nodo implements INodo{
 	@Override
 	public Nodo getAnterior() {
 		// TODO Auto-generated method stub
-		return null;
+		return anterior;
 	}
 	@Override
 	public void setAnterior(INodo actual) {
