@@ -5,7 +5,7 @@ import interfaz.IVehiculo;
 
 public class Nodo implements INodo{
 	
-	private Nodo siguiente;
+	private INodo siguiente;
 	private IVehiculo dato;
 	private INodo anterior;
 	
@@ -26,20 +26,20 @@ public class Nodo implements INodo{
 	}
 
 	@Override
-	public void setDato(Vehiculo nuevoDato) {
+	public void setDato(IVehiculo nuevoDato) {
 		this.dato=nuevoDato;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Nodo getSiguiente() {
+	public INodo getSiguiente() {
 		// TODO Auto-generated method stub
 		return siguiente;
 	}
 
 	@Override
-	public void setSiguiente(Nodo nuevoNodo) {
+	public void setSiguiente(INodo nuevoNodo) {
 		this.siguiente=nuevoNodo;
 		// TODO Auto-generated method stub
 		
@@ -49,7 +49,7 @@ public class Nodo implements INodo{
 		return "Nodo ["+"dato=" + dato+  " antirior= " +anterior+ " siguiente=" + siguiente + "]";
 	}
 	@Override
-	public Nodo getAnterior() {
+	public INodo getAnterior() {
 		// TODO Auto-generated method stub
 		return anterior;
 	}
