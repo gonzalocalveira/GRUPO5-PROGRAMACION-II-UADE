@@ -15,11 +15,11 @@ public interface INodo {
 
 	/// Precondición: ninguna.
 	/// Postcondición: Devuelve el nodo siguiente.
-	public Nodo getSiguiente();
+	public INodo getSiguiente();
 
 	/// Precondición: nuevoNodo puede ser null (si es el final de la lista).
 	/// Postcondición: Se actualiza el puntero siguiente del nodo actual.
-	public void setSiguiente(Nodo nuevoNodo);
+	public void setSiguiente(INodo nuevoNodo);
 
 	/// Precondición: ninguna.
 	/// Postcondición: Devuelve una representación textual del nodo.
@@ -27,7 +27,7 @@ public interface INodo {
 	
 	/// Precondición: ninguna.
 	/// Postcondición: Devuelve el nodo anterior.
-	public Nodo getAnterior();
+	public INodo getAnterior();
 	
 	/// Precondición: actual puede ser null si el nodo pasa a ser el primero.
 	/// Postcondición: Se actualiza el puntero anterior del nodo actual.
