@@ -5,7 +5,7 @@ import interfaz.INodo;
 import interfaz.IVehiculo;
 
 public class Lista implements ILista{
-	private Nodo primero;
+	private INodo primero;
 	
 	
 	
@@ -16,7 +16,7 @@ public class Lista implements ILista{
 
 	@Override
 	public void agregarPrimero(IVehiculo dato) {
-		Nodo nuevoNodo= new Nodo(dato);///(44)
+		INodo nuevoNodo= new Nodo(dato);///(44)
 		
 		if(!estaVacia()) { ///  (44)  [22]-->null
 			
@@ -52,7 +52,7 @@ public class Lista implements ILista{
 		
 		}
 		else {
-			Nodo nuevoNodo=new Nodo(dato); ///(44)
+			INodo nuevoNodo=new Nodo(dato); ///(44)
 			
 			///[22], anterior=null siguiente=null
 			INodo actual=this.primero; ///[22]
@@ -82,10 +82,10 @@ public class Lista implements ILista{
 			     /// [20]--> [11]--> [0]--> null
 				 /// cant=3
 		///quiero agregar en la posicion 1 
-			Nodo nuevoNodo=new Nodo(dato);
+			INodo nuevoNodo=new Nodo(dato);
 			INodo actual=this.primero;///[20]
 			int contador=0;
-			boolean encontradoPos=false;
+			
 			while (actual != null && contador < pos - 1) {
 	            actual = actual.getSiguiente();
 	            contador++;
@@ -199,7 +199,7 @@ public class Lista implements ILista{
 	}
 	@Override
 	public IVehiculo obtenerUltimo() {
-		Nodo actual= primero;
+		INodo actual= primero;
 		
 		while(actual.getSiguiente()!=null) {
 			actual=actual.getSiguiente();
@@ -210,7 +210,7 @@ public class Lista implements ILista{
 
 	@Override
 	 public void mostrarLista() {
-        Nodo actual = primero;
+        INodo actual = primero;
         while (actual != null) {
         	//getDato --- Del Nodo ---- Vehiculo!!!
             System.out.print(actual.getDato() +"\n");
