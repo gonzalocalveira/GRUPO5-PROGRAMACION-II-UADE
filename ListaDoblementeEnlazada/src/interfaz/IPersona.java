@@ -21,7 +21,7 @@ public interface IPersona {
 
 	/// Precondición: ninguna.
 	/// Postcondición: Devuelve la lista de vehículos del propietario.
-	public Lista getListaVehiculos();
+	public ILista getListaVehiculos();
 
 	/// Precondición: ninguna.
 	/// Postcondición: Devuelve una representación textual de la persona.
