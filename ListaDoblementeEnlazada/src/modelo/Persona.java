@@ -9,7 +9,7 @@ public class Persona implements IPersona {
 
 	private String nombre;
 	private int dni;
-	private Lista listaVehiculos;
+	private ILista listaVehiculos;
 	
 
 	
@@ -49,7 +49,7 @@ public class Persona implements IPersona {
 
 
 	@Override
-	public Lista getListaVehiculos() {
+	public ILista getListaVehiculos() {
 		// TODO Auto-generated method stub
 		return listaVehiculos;
 	}
