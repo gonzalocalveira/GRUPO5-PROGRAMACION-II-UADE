@@ -11,10 +11,10 @@ public class TestLista {
 	public static void main(String[] args) {
 		IPersona p1= new Persona("Gonzalo",46291838);
 		
-		Vehiculo v1 = new Vehiculo("ABC123", "Toyota Corolla");
-		Vehiculo v2 = new Vehiculo("DEF456", "Ford Focus");
-		Vehiculo v3 = new Vehiculo("GHI789", "Volkswagen Golf");
-		Vehiculo v4 = new Vehiculo("JKL012", "Honda Civic");
+		IVehiculo v1 = new Vehiculo("ABC123", "Toyota Corolla");
+		IVehiculo v2 = new Vehiculo("DEF456", "Ford Focus");
+		IVehiculo v3 = new Vehiculo("GHI789", "Volkswagen Golf");
+		IVehiculo v4 = new Vehiculo("JKL012", "Honda Civic");
 
 		p1.getListaVehiculos().agregarPrimero(v1);
 		p1.getListaVehiculos().agregarPrimero(v2);
