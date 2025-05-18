@@ -1,6 +1,7 @@
 
 package modelo;
 
+import interfaz.ILista;
 import interfaz.IPersona;
 
 public class Persona implements IPersona {
