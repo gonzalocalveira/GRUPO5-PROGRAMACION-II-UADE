@@ -2,7 +2,7 @@ package modelo;
 
 import interfaz.IPersona;
 
-public class Persona implements IPersona {
+public class Persona implements IPersona, Comparable <IPersona>{
 	
 	private String nombre;
 	private String DNI;
@@ -31,6 +31,21 @@ public class Persona implements IPersona {
 	public String toString() {
 		return "Persona [nombre=" + nombre + ", DNI=" + DNI + "]";
 	}
+	@Override
+	public int compareTo(IPersona otraPersona) {
+		// TODO Auto-generated method stub
+		return this.DNI.compareTo(otraPersona.getDNI());
+	}
+	@Override
+	public void ordenPorNombre(List<IPersona> p) {
+		
+		Collections.sort(p);
+		
+		for (IPersona p1: p) {
+			System.out.print(p1.getNombre()+"--> ");
+		}
+	}
+
 	
 	
 
