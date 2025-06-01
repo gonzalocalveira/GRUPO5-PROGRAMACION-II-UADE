@@ -18,7 +18,7 @@ public class TestDeCompararPersonaPorNombre {
 		personas.add(p2);
 		personas.add(p3);
 		
-		p1.ordenPorNombre(personas);
+		p1.ordenarLista(personas);
 	}
 
 }
