@@ -37,7 +37,7 @@ public class Persona implements IPersona, Comparable <IPersona>{
 		return this.DNI.compareTo(otraPersona.getDNI());
 	}
 	@Override
-	public void ordenPorNombre(List<IPersona> p) {
+	public void ordenarLista(List<IPersona> p) {
 		
 		Collections.sort(p);
 		
