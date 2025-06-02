@@ -58,33 +58,33 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 	    int cmp = dato.compareTo(nodo.getDato());
 
 	    if (cmp < 0) {
-	        nodo.setIzquierdo(eliminarRec(nodo.getIzquierdo(), dato));
+	        nodo.setIzquierda(eliminarRec(nodo.getIzquierda(), dato));
 	    } else if (cmp > 0) {
-	        nodo.setDerecho(eliminarRec(nodo.getDerecho(), dato));
+	        nodo.setDerecha(eliminarRec(nodo.getDerecha(), dato));
 	    } else {
 	    	//Caso 1:Nodo sin hijos
-	        if (nodo.getIzquierdo() == null && nodo.getDerecho() == null) {
+	        if (nodo.getIzquierda() == null && nodo.getDerecha() == null) {
 	            return null;
 	        }
 	        //Caso 2: Un solo hijo
-	        if (nodo.getIzquierdo() == null) {
-	            return nodo.getDerecho();
+	        if (nodo.getIzquierda() == null) {
+	            return nodo.getDerecha();
 	        }
-	        if (nodo.getDerecho() == null) {
-	            return nodo.getIzquierdo();
+	        if (nodo.getDerecha() == null) {
+	            return nodo.getIzquierda();
 	        }
 	        //Caso 3; 2 hijos
-	        INodo<T> sucesor = encontrarMinimo(nodo.getDerecho());
+	        INodo<T> sucesor = encontrarMinimo(nodo.getDerecha());
 	        nodo.setDato(sucesor.getDato());
-	        nodo.setDerecho(eliminarRec(nodo.getDerecho(), sucesor.getDato()));
+	        nodo.setDerecha(eliminarRec(nodo.getDerecha(), sucesor.getDato()));
 	    }
 
 	    return nodo;
 	}
 
 	private INodo<T> encontrarMinimo(INodo<T> nodo) {
-	    while (nodo.getIzquierdo() != null) {
-	        nodo = nodo.getIzquierdo();
+	    while (nodo.getIzquierda() != null) {
+	        nodo = nodo.getIzquierda();
 	    }
 	    return nodo;
 	}
