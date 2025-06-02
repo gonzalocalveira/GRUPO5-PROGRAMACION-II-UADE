@@ -48,8 +48,45 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 
 	@Override
 	public T eliminar(T dato) {
-		// TODO Auto-generated method stub
+		raiz=eliminarRec(raiz,dato);
 		return null;
+	}
+
+	private INodo<T> eliminarRec(INodo<T> nodo, T dato) {
+	    if (nodo == null) return null;
+
+	    int cmp = dato.compareTo(nodo.getDato());
+
+	    if (cmp < 0) {
+	        nodo.setIzquierdo(eliminarRec(nodo.getIzquierdo(), dato));
+	    } else if (cmp > 0) {
+	        nodo.setDerecho(eliminarRec(nodo.getDerecho(), dato));
+	    } else {
+	    	//Caso 1:Nodo sin hijos
+	        if (nodo.getIzquierdo() == null && nodo.getDerecho() == null) {
+	            return null;
+	        }
+	        //Caso 2: Un solo hijo
+	        if (nodo.getIzquierdo() == null) {
+	            return nodo.getDerecho();
+	        }
+	        if (nodo.getDerecho() == null) {
+	            return nodo.getIzquierdo();
+	        }
+	        //Caso 3; 2 hijos
+	        INodo<T> sucesor = encontrarMinimo(nodo.getDerecho());
+	        nodo.setDato(sucesor.getDato());
+	        nodo.setDerecho(eliminarRec(nodo.getDerecho(), sucesor.getDato()));
+	    }
+
+	    return nodo;
+	}
+
+	private INodo<T> encontrarMinimo(INodo<T> nodo) {
+	    while (nodo.getIzquierdo() != null) {
+	        nodo = nodo.getIzquierdo();
+	    }
+	    return nodo;
 	}
 
 	
