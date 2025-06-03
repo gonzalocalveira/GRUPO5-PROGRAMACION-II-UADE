@@ -128,6 +128,12 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 		
 	}
 
+        @Override
+	public int comparar(INodo<T> nodo, T dato) {
+		return dato.compareTo(nodo.getDato());
+		/// comparar(nodo, dato)<0 si es menor, 0 si son iguales, comparacion>1 si es mayor
+	}
+	
 	
 
 }
