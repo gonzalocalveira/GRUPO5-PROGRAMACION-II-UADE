@@ -7,13 +7,13 @@ import interfaz.IPersona;
 public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 	
 	private INodo raiz;
-	private int peso;
+	private int nodosDuplicados;
 	
 	
 	
 	public Arbol() {
 		this.raiz=null;
-		this.peso=0;
+		this.nodosDuplicados=0;
 	}
 	@Override
     public void insertar(T dato) {
@@ -39,7 +39,7 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 			
 		}
 		else {
-			peso++;
+			nodosDuplicados++;
 			
 		}
 		return nodo;
