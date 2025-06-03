@@ -122,8 +122,19 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 	}
 
 	@Override
-	public void recorridoPostOrden(INodo nodo) {
+	public void recorridoPostOrden(INodo<T> nodo) {
 		// TODO Auto-generated method stub
+		postOrdenRecu(INodo<T> nodo);
+	}
+
+	@Override
+	public void postOrdenRecu(INodo<T> nodo) {
+		if(nodo!=null) {
+			postOrdenRecu(nodo.getIzquierda());
+			postOrdenRecu(nodo.getDerecha());
+			System.out.print(nodo.getDato()+" ");
+			
+		}
 		
 	}
 	@Override
