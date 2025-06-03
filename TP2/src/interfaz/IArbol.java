@@ -16,7 +16,7 @@ public interface IArbol<T> {
 	public void inordenRec(INodo nodo);
 	public void recorridoInorden();
 	
-	public void recorridoPostOrden(INodo<T> nodo);
+	public void recorridoPostOrden();
         public void postOrdenRecu(INodo<T> nodo);
 	
 	public int comparar(INodo<T> nodo, T dato);
