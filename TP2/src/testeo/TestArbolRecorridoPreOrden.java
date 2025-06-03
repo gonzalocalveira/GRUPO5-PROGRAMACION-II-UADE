@@ -1,3 +1,10 @@
+package testeo;
+
+import interfaz.IArbol;
+import interfaz.IPersona;
+import modelo.Arbol;
+import modelo.Persona;
+
 public class TestArbolRecorridoPreOrden {
 	public static void main(String[] args) {
 		IPersona p1= new Persona("Julian","45675291");
