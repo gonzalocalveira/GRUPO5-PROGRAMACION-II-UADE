@@ -28,12 +28,12 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 			return new Nodo(dato);
 		}
 		
-		int comparacion= dato.compareTo(nodo.getDato());
+	
 		/// comparacion<0 si es menor, 0 si son iguales, comparacion>1 si es mayor
-		if(comparacion<0) {
+		if(comparar(nodo, dato)<0) {
 			nodo.setIzquierda(insertarRecu(nodo.getIzquierda(),  dato));
 			
-		}else if (comparacion>0) {
+		}else if (comparar(nodo, dato)>0) {
 			nodo.setDerecha(insertarRecu(nodo.getDerecha(), dato));
 			
 			
@@ -55,11 +55,10 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 	private INodo<T> eliminarRec(INodo<T> nodo, T dato) {
 	    if (nodo == null) return null;
 
-	    int cmp = dato.compareTo(nodo.getDato());
-
-	    if (cmp < 0) {
+	    
+	    if (comparar(nodo, dato) < 0) {
 	        nodo.setIzquierda(eliminarRec(nodo.getIzquierda(), dato));
-	    } else if (cmp > 0) {
+	    } else if (comparar(nodo, dato) > 0) {
 	        nodo.setDerecha(eliminarRec(nodo.getDerecha(), dato));
 	    } else {
 	    	//Caso 1:Nodo sin hijos
@@ -126,6 +125,23 @@ public class Arbol<T extends Comparable<T>> implements IArbol<T> {
 	public void recorridoPostOrden(INodo nodo) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public INodo<T> buscar(T dato){
+		return buscarRecur(raiz,dato);
+		
+	}
+	
+	private INodo<T> buscarRecur(INodo<T> n, T dato){
+		if(n== null || n.getDato()==dato) {
+			return n;
+		}
+		if( comparar( n, dato) <0) {
+			return buscarRecur(n.getIzquierda(),dato);
+		}
+		else {
+			return buscarRecur(n.getDerecha(),dato);
+		}
 	}
 
         @Override
