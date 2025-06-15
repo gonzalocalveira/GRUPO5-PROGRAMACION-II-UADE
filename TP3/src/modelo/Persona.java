@@ -3,10 +3,11 @@ package modelo;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import interfaz.IPersona;
 
-public class Persona implements IPersona, Comparable <IPersona> {
+public class Persona implements IPersona{
 	
 	private String nombre;
 	private String DNI;
@@ -37,21 +38,29 @@ public class Persona implements IPersona, Comparable <IPersona> {
 	}
 
 
-	
+	@Override
+	public int hashCode() {
+		return Objects.hash(DNI);
+	}
+
 
 	@Override
-	public int compareTo(IPersona otraPersona) {
-		// TODO Auto-generated method stub
-		return this.nombre.compareTo(otraPersona.getNombre());
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return Objects.equals(DNI, other.DNI);
 	}
-	@Override
-	public void ordenarLista(List<IPersona> p) {
-		
-		Collections.sort(p);
-		
-		for (IPersona p1: p) {
-			System.out.print(p1.getNombre()+"--> ");
-		}
-	}
+
+
+	
+
+
+
+}
 
 }
