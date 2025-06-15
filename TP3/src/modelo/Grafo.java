@@ -112,7 +112,7 @@ public class Grafo <T>implements IGrafo<T>{
 		
 		List<T> listaClaves= new ArrayList<T>(nodos.keySet());
 		
-		Collections.sort(listaClaves, new ComparatorPersona());
+		Collections.sort(listaClaves, new ComparatorPersonaDNI());
 		
 	
 		System.out.println();
