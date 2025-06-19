@@ -15,7 +15,7 @@ public class TesteoMatrizAdyacencia {
 		
 		
 		
-		IGrafo grafo= new Grafo(true);
+		IGrafo grafo= new Grafo(false);
 		
 		grafo.agregarNodo(p1);
 		grafo.agregarNodo(p2);
@@ -27,6 +27,7 @@ public class TesteoMatrizAdyacencia {
 		grafo.agregarArista(p1, p3);// Ana-Carla
 		grafo.agregarArista(p2, p4);// Bruno-Dario
 		grafo.agregarArista(p3, p5);// Carla-Elena
+		
 		
 		
 		grafo.matrizAdyacencia();
