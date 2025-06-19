@@ -126,12 +126,12 @@ public class Grafo <T>implements IGrafo<T>{
 	     System.out.println();
 
 	     
-	     for (T columna : claves) { 
-	         System.out.print(columna + ": ");
-	         for (T fila : claves) { 
-	             INodo nodoColumna = nodos.get(columna);
+	     for (T fila : claves) { 
+	         System.out.print(fila + ": ");
+	         for (T columna: claves) {  /// 1 , 2, 3 --- Filas
 	             INodo nodoFila = nodos.get(fila);
-	             System.out.print(nodoColumna.getVecinos().contains(nodoFila) ? "1 " : "0 ");
+	             INodo nodoColumna = nodos.get(columna);
+	             System.out.print(nodoFila.getVecinos().contains(nodoColumna) ? "1 " : "0 ");
 	         }
 	         System.out.println();
 	     }
@@ -142,3 +142,4 @@ public class Grafo <T>implements IGrafo<T>{
 	
 
 }
+
