@@ -1,5 +1,4 @@
 package test;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,9 +6,9 @@ import java.util.List;
 import interfaz.IPersona;
 import modelo.Persona;
 import modelo.ComparatorPersonaDNI;
-
 public class TesteoComparatorPersonaDNI {
-    public static void main(String[] args) {
+	
+	public static void main(String[] args) {
         
         List<IPersona> personas = new ArrayList<>();
         personas.add(new Persona("Ana", "45675251"));
@@ -20,17 +19,18 @@ public class TesteoComparatorPersonaDNI {
 
         
         System.out.println("Antes de ordenar por DNI:");
+        
         for (IPersona p : personas) {
             System.out.println(p);
         }
-
         
-        Collections.sort(personas, new ComparatorPersonaDNI<>());
-
+        Collections.sort(personas, new ComparatorPersonaDNI<>()); 
         
         System.out.println("\nDespués de ordenar por DNI:");
+        
         for (IPersona p : personas) {
             System.out.println(p);
         }
-    }
+ }
+
 }
