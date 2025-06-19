@@ -13,7 +13,7 @@ public class TesteoRecorridoDFS {
 		
 		
 		
-		IGrafo grafo= new Grafo();
+		IGrafo grafo= new Grafo(true);
 		
 		grafo.agregarNodo(p1);
 		grafo.agregarNodo(p2);
