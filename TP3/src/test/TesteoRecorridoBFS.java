@@ -15,7 +15,7 @@ public class TesteoRecorridoBFS {
 		
 		
 		
-		IGrafo grafo= new Grafo();
+		IGrafo grafo= new Grafo(true);
 		
 		grafo.agregarNodo(p1);
 		grafo.agregarNodo(p2);
@@ -29,6 +29,8 @@ public class TesteoRecorridoBFS {
 		grafo.agregarArista(p3, p5);
 		
 		
-		grafo.recorridoBFS(p1);
+		
+		grafo.recorridoBFS(p2);
 	}
 }
+
