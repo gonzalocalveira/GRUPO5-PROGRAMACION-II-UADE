@@ -30,7 +30,7 @@ public class TesteoRecorridoBFS {
 		
 		
 		
-		grafo.recorridoBFS(p2);
+		grafo.recorridoBFS(p1);
 	}
 }
 
