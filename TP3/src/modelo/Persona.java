@@ -57,7 +57,4 @@ public class Persona implements IPersona{
 	}
 
 
-
 }
-
-
