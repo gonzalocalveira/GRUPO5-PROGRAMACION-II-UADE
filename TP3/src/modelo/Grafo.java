@@ -127,7 +127,7 @@ public class Grafo <T>implements IGrafo<T>{
 
 	     
 	     for (T columna : claves) { 
-	         System.out.print(i + ": ");
+	         System.out.print(columna + ": ");
 	         for (T fila : claves) { 
 	             INodo nodoColumna = nodos.get(columna);
 	             INodo nodoFila = nodos.get(fila);
