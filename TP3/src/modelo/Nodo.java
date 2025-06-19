@@ -40,7 +40,7 @@ public class Nodo<T> implements INodo{
 	}
 
 	@Override
-	public List getVecinos() {
+	public List<INodo<T>> getVecinos() {
 		// TODO Auto-generated method stub
 		return vecinos;
 	}
