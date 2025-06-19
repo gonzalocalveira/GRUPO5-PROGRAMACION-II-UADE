@@ -18,12 +18,15 @@ public class Grafo <T>implements IGrafo<T>{
 	
 	private Map<T,INodo> nodos= new HashMap<>();
 	
+	private boolean esDirigido;
 
 	
 	
 	
 	
-	
+	public Grafo(boolean esDirigido){
+		this.esDirigido=esDirigido;
+	}
 	@Override
 	public void agregarNodo(T dato) {
 		// TODO Auto-generated method stub
@@ -44,9 +47,11 @@ public class Grafo <T>implements IGrafo<T>{
 			INodo nodoFin=nodos.get(fin);//B
 			
 			
-			nodoInicio.agregarVecino(nodoFin); //A->B
+			nodoInicio.agregarVecino(nodoFin);//A->B
+			
+			if(!esDirigido) {
 			nodoFin.agregarVecino(nodoInicio);//A<-B
-                                             //A<->B		
+			}                //A<->B		
 		
 		}
 	}
@@ -110,34 +115,27 @@ public class Grafo <T>implements IGrafo<T>{
 	@Override
 	public void matrizAdyacencia() {
 		
-		List<T> listaClaves= new ArrayList<T>(nodos.keySet());
-		
-		Collections.sort(listaClaves, new ComparatorPersonaDNI());
-		
-	
-		System.out.println();
-		
-		for (T fila : listaClaves) {
-	        System.out.print(fila + ": ");
+		 System.out.println("Matriz de Adyacencia:");
+	     List<T> claves = new ArrayList<>(nodos.keySet());
+	     
+	     Collections.sort(claves, new ComparatorPersonaDNI()); 
 
-	        INodo<T> nodoFila = nodos.get(fila);
-	        for (T columna : listaClaves) {
-	            INodo<T> nodoColumna = nodos.get(columna);
+	     
+	     System.out.print("   ");
+	     for (T i : claves) System.out.print(i + " ");
+	     System.out.println();
 
-	            boolean conexion = false;
-	            for (INodo<T> vecino : nodoFila.getVecinos()) {
-	                if (vecino.getValor().equals(nodoColumna.getValor())) {
-	                    conexion = true;
-	                    break;
-	                }
-	            }
-	            System.out.print(conexion ? "1 " : "0 ");
-	        }
-	        System.out.println();
-	    }
-			
-		
-	}
+	     
+	     for (T columna : claves) { 
+	         System.out.print(i + ": ");
+	         for (T fila : claves) { 
+	             INodo nodoColumna = nodos.get(columna);
+	             INodo nodoFila = nodos.get(fila);
+	             System.out.print(nodoColumna.getVecinos().contains(nodoFila) ? "1 " : "0 ");
+	         }
+	         System.out.println();
+	     }
+	 }
 
 	
 	
