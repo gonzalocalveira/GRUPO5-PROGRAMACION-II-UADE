@@ -56,18 +56,6 @@ public class Persona implements IPersona{
 		return Objects.equals(DNI, other.DNI);
 	}
 
-	//Correcciones metodos faltantes
-	@Override
-	public int compareTo(IPersona otraPersona) {
-	    return this.nombre.compareTo(otraPersona.getNombre());
-	}
-	
-	@Override
-	public void ordenarLista(List<IPersona> p) {
-	    p.sort(new ComparatorPersonaDNI());
-	}
-
-
 
 
 }
